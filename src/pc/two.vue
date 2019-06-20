@@ -123,13 +123,16 @@ export default {
                         }
                     })
                     this.$notify({
-                        message: name+'取消收藏成功',
+                        
+                        message: '<b><i>'+name+'</i></b>&nbsp;&nbsp;&nbsp;<font size="1">取消收藏成功</font>',
+                        dangerouslyUseHTMLString: true,
                         type: 'success',
                         duration:2000
                     });
                 }else{
                     this.$notify({
-                        message: name+'取消收藏失败',
+                        message: '<b><i>'+name+'</i></b>&nbsp;&nbsp;&nbsp;<font size="1">取消收藏失败</font>',
+                        dangerouslyUseHTMLString: true,
                         type: 'error',
                         duration:2000
                     });
