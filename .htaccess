@@ -1,0 +1,15 @@
+<IfModule mod_rewrite.c>
+
+  RewriteEngine On
+
+  RewriteBase /myp/
+
+  RewriteRule ^index\.html$ - [L]
+
+  RewriteCond %{REQUEST_FILENAME} !-f
+
+  RewriteCond %{REQUEST_FILENAME} !-d
+
+  RewriteRule ./myp/index.html [L]
+
+</IfModule>
