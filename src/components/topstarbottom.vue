@@ -1,15 +1,13 @@
 <template>
     <div id="app">
-        <div @click="upfun"><img :src="upimg" alt="up" ></div>
-        <div @click="starfun"><img :src="starflag?stardoimg:starimg" alt="star" ></div>
-        <div @click="downfun"><img :src="downimg" alt="down" ></div>
+            <div class="div" @click="upfun"><img :src="upimg" alt="up" ></div>
+            <div class="div" @click="starfun"><img :src="starflag?stardoimg:starimg" alt="star" ></div>
     </div>
 </template>
 <script>
 import starimg from "../assets/star.png"
 import stardoimg from "../assets/stardo.png"
 import upimg from "../assets/up.png"
-import downimg from "../assets/down.png"
 import { MessageBox } from 'mint-ui';
 import { star,add_star,del_star } from "../api/index"
 export default {
@@ -19,14 +17,20 @@ export default {
             upimg:upimg,
             starimg:starimg,
             stardoimg:stardoimg,
-            downimg:downimg,
             starflag:false,
             cartoon_name:""
         }
     },
     methods:{
         upfun(){
-            window.scrollTo(0,0)
+            var height = document.documentElement.scrollTop
+            setTimeout(() => {
+                height-=100
+                window.scrollTo(0,height)
+                if(height>0){
+                    this.upfun()
+                }
+            }, 1);
         },
         starfun(){
             if(this.$cookies.isKey("username")){
@@ -57,9 +61,6 @@ export default {
                         this.$router.push("/view/three")
                 });
             }
-        },
-        downfun(){
-            window.scrollTo(0,document.body.clientHeight)
         }
     },
     watch:{
@@ -81,9 +82,8 @@ export default {
 </script>
 <style scoped>
 #app{
-    height: 7.5rem;
+    height: 5rem;
     width: 2.1875rem;
-    background: white;
     position: fixed;
     bottom:1.875rem;
     right: .625rem;
@@ -93,8 +93,15 @@ export default {
     align-items: center;
     z-index: 999
 }
-img{
-    width: 1.875rem;
-    height: 1.875rem;
+#app .div{
+    background: white;
+    box-shadow: 0 0 6px rgba(0,0,0,.12);
+    border-radius: 50%;
 }
+#app .div img{
+    padding: .3125rem;
+    width: 1.25rem;
+    height: 1.25rem;
+}
+
 </style>

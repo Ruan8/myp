@@ -71,6 +71,7 @@ export default {
     margin-bottom: .625rem;
     text-indent: .625rem;
     border:none;
+    border-radius:0;
     border-bottom:red .0625rem solid;
     letter-spacing: .0625rem;
     height: 2.5rem;
