@@ -59,7 +59,7 @@ img{
 input{
     border: none;
     height: 1.875rem;
-
+    border-radius:0;
     border-bottom: red 1px solid;
     text-indent: .625rem;
 }
