@@ -24,9 +24,9 @@
                                     </div>
                                 </div>
                                 <div v-else class="tx">
-                                    <router-link to="/login"><el-link :underline="false" type="primary">登录</el-link></router-link>
+                                    <router-link to="/login"><el-link :underline="false" type="primary" plan="true" :disabled="$route.name == 'login'">登录</el-link></router-link>
                                     <span class="centerline">|</span>
-                                    <router-link to="/register"><el-link :underline="false" type="primary">注册</el-link></router-link>
+                                    <router-link to="/register"><el-link :underline="false" type="primary" plan="true" :disabled="$route.name == 'register'">注册</el-link></router-link>
                                 </div>
                             </el-col>
                         </el-row>
@@ -57,6 +57,7 @@ export default {
     beforeCreate(){
     },
     created(){
+        
     },
     methods:{
         sex(){
