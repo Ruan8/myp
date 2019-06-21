@@ -8,7 +8,7 @@
   </mt-tab-container-item>
 </mt-tab-container>
 <mt-tabbar v-model="selected" :fixed=true>
-  <mt-tab-item :id="$route.path=='/view'?'/view':'/view/one'" >
+  <mt-tab-item id="/view/one" >
     <img slot="icon"  src="../assets/xin.png">
     猜你喜欢
   </mt-tab-item>
@@ -39,6 +39,9 @@ export default {
     watch:{
       selected:function(e){
         this.$router.replace(e)
+      },
+      $route(e){
+        this.selected = e.path
       }
     },
     methods:{
