@@ -87,6 +87,7 @@ export default {
     justify-content: center;
     align-items: center;
     font-size:.875rem; 
+    color: blue;
 }
 .flex{
     display: flex;

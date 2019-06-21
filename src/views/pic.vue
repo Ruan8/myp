@@ -44,8 +44,6 @@ export default {
         this.index(this.url)
         this.orderheight = window.screen.height
         window.addEventListener('scroll',this.Scroll)
-        
-
     },
     methods:{
         Scroll(e){
@@ -63,10 +61,10 @@ export default {
             })
         },
         up(){
-            this.$router.push({path:"/pic",query:{ url:this.up_url }})
+            this.$router.replace({query:{ url:this.up_url }})
         },
         next(){
-            this.$router.push({path:"/pic",query:{ url:this.next_url }})
+            this.$router.replace({query:{ url:this.next_url }})
         },
         center(){
             this.toshow = !this.toshow
@@ -101,6 +99,24 @@ export default {
             setTimeout(() => {
                 this.isshow = false
             }, 3000);
+        },
+        totop(h=0){
+            var height = document.body.clientHeight
+            h+=500
+            setTimeout(() => {
+                window.scrollTo(0,height-h)
+                if(h<height){
+                    this.totop(h)
+                }
+            }, 1);
+        }
+    },
+    watch:{
+        $route(){
+            var url = this.$route.query.url
+            this.url = url
+            this.index(url)
+            this.totop()
         }
     },
     components:{
