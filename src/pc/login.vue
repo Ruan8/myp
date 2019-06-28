@@ -38,8 +38,8 @@
     justify-content: center;
 }
 .login{
-    width: 300px;
-    height: 60%;
+    width: 18.75rem;
+    height: 60vh;
     background: white;
     min-height: 410px;
     border-radius: 5px;
