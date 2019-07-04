@@ -28,12 +28,12 @@
                 <div  v-for="(value,index) in imgUrl.length%4==0 ? imgUrl.length/4 : parseInt(imgUrl.length/4)+1"  :key="index">
                     <div class="list" v-if="imgUrl.length>=value*4">
                         <div v-for="(v,i) in 4"  :key="i">
-                            <router-link :to="{path:'/app/list',query:{ url:url[4*index+i] }}"><singleimg :src="imgUrl[4*index+i]" :tt1="title[4*index+i]" :tt2="nickName[4*index+i]"/></router-link>
+                            <router-link :to="{path:'/list',query:{ url:url[4*index+i] }}"><singleimg :src="imgUrl[4*index+i]" :tt1="title[4*index+i]" :tt2="nickName[4*index+i]"/></router-link>
                         </div>
                     </div>
                     <div v-else class="list">
                         <div v-for="(v,i) in imgUrl.length%4"  :key="i">
-                            <router-link :to="{path:'/app/list',query:{ url:url[4*index+i] }}">
+                            <router-link :to="{path:'/list',query:{ url:url[4*index+i] }}">
                                 <singleimg :src="imgUrl[4*index+i]" :tt1="title[4*index+i]" :tt2="nickName[4*index+i]"/>
                             </router-link>
                         </div>
