@@ -128,6 +128,7 @@ export default {
 <style scoped>
 img{
     width: 100%;
+    outline: none;
 }
 div{
     font-size: 0;

@@ -71,7 +71,6 @@
     font-size: 30px;
 }
 .header{
-    
     position: relative;
     height: 40px;
     display: flex;
@@ -154,7 +153,7 @@ export default {
             next:false,
             up:false,
             url:"",
-            isheight:"",
+            isheight:0,
             topshow:false,
             isstar:false,
             listshow:false,
@@ -169,8 +168,8 @@ export default {
         // this.loadingInstance = Loading.service({ fullscreen: true })
         this.$nextTick(()=>{
             this.pic()
+            window.addEventListener('scroll',this.Scroll)
         })
-        window.addEventListener('scroll',this.Scroll)
     },
     methods:{
         listenter(){

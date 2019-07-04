@@ -82,7 +82,7 @@ export default {
 </script>
 <style scoped>
 #app{
-    height: 5rem;
+    height: 6rem;
     width: 2.1875rem;
     position: fixed;
     bottom:1.875rem;
@@ -91,7 +91,7 @@ export default {
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    z-index: 999
+    z-index: 999;
 }
 #app .div{
     background: white;
@@ -100,8 +100,8 @@ export default {
 }
 #app .div img{
     padding: .3125rem;
-    width: 1.25rem;
-    height: 1.25rem;
+    width: 1.5625rem;
+    height: 1.5625rem;
 }
 
 </style>
